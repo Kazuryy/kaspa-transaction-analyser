@@ -1,0 +1,207 @@
+/* Styles généraux */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+}
+
+/* Graphe */
+#graph-container {
+    position: relative;
+    background-color: #222;
+    height: 600px;
+    overflow: hidden;
+}
+
+#graph-svg {
+    width: 100%;
+    height: 100%;
+}
+
+#graph-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    color: #aaa;
+    background-color: #222;
+}
+
+/* Tooltip pour le graphe */
+.tooltip {
+    position: absolute;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    z-index: 1000;
+    max-width: 250px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.tooltip h6 {
+    margin-top: 0;
+    color: #17a2b8;
+    border-bottom: 1px solid #444;
+    padding-bottom: 5px;
+}
+
+.tooltip-field {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4px;
+}
+
+.tooltip-label {
+    font-weight: bold;
+    margin-right: 10px;
+    color: #aaa;
+}
+
+.tooltip-value {
+    text-align: right;
+}
+
+/* Overlay de chargement */
+#loading-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+}
+
+/* Styles des nœuds et arêtes */
+.node {
+    stroke: #fff;
+    stroke-width: 1.5px;
+    cursor: pointer;
+}
+
+.node.selected {
+    stroke: #ffc107;
+    stroke-width: 3px;
+}
+
+.node.highlighted {
+    stroke: #ffc107;
+    stroke-width: 2px;
+}
+
+.node.exchange {
+    fill: #d62728;
+}
+
+.node.potential-exchange {
+    fill: #ff7f0e;
+}
+
+.node.suspicious {
+    fill: #9467bd;
+}
+
+.node.start {
+    fill: #2ca02c;
+}
+
+.node-label {
+    font-size: 10px;
+    text-anchor: middle;
+    pointer-events: none;
+    fill: #fff;
+    user-select: none;
+}
+
+.link {
+    stroke: #666;
+    stroke-opacity: 0.6;
+    fill: none;
+}
+
+.link.highlighted {
+    stroke: #ffc107;
+    stroke-opacity: 0.8;
+}
+
+/* Pattern d'alertes */
+.alert-pattern {
+    background-color: #f8f9fa;
+    border-left: 4px solid #dc3545;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+.alert-pattern.cycling {
+    border-left-color: #9467bd;
+}
+
+.alert-pattern.layering {
+    border-left-color: #ff7f0e;
+}
+
+.alert-pattern.smurfing {
+    border-left-color: #2ca02c;
+}
+
+.alert-pattern.sudden_activity {
+    border-left-color: #d62728;
+}
+
+.alert-pattern.potential_exchange {
+    border-left-color: #1f77b4;
+}
+
+.alert-pattern h6 {
+    margin-top: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.alert-pattern .badge {
+    font-size: 10px;
+}
+
+.alert-pattern .address {
+    font-family: monospace;
+    font-size: 12px;
+    color: #666;
+    word-break: break-all;
+}
+
+.confidence {
+    display: inline-block;
+    height: 6px;
+    border-radius: 3px;
+    background-color: #dc3545;
+    margin-top: 6px;
+}
+
+/* Couleurs personnalisées */
+.bg-purple {
+    background-color: #9467bd !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    #graph-container {
+        height: 400px;
+    }
+    
+    .card-header h5 {
+        font-size: 16px;
+    }
+    
+    .form-label {
+        font-size: 14px;
+    }
+}
